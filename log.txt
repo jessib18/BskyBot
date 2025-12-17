@@ -1,0 +1,521 @@
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 21
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 21
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 15, 2025 · 06:11 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 06:00 AM 
+added
+Posted at : Dec 16, 2025 · 03:44 AM 
+added
+Posted at : Dec 16, 2025 · 03:00 AM 
+added
+Posted at : Dec 15, 2025 · 06:10 AM 
+still too old
+stop searching
+scraping post
+tweet text: " 楽曲 "の世界観をイメージして調香した
+珠玉のフレグランスシリーズ
+
+商品名：
+Parfum Musique　第2弾 ＿ 𝓜𝓨𝓢𝓣𝓔𝓡𝓨
+✧ UNDYING HOLY LOVE
+✧ Psyche's Butterfly
+✧ メランコリーを駆け抜けろ♥
+発売元：pattythree株式会社
+
+ただいまよりご予約開始！
+
+~~~~~~
+pattythree-shop-product.jp/c…
+ersetze links
+link: pattythree-shop-product.jp/c…
+link ersetzt mit: https://pattythree-shop-product.jp/collections/fragrance_1215
+scraping images
+added image link: /pic/orig/media%2FG8M51kVaYAAGYAI.jpg
+Image image_1.jpg downloaded successfully!
+login success
+1920 1080
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 3:00 AM UTC
+saved timestamp successfully
+scraping post
+tweet text: 香りの時間経過と物語がリンクする
+ドラマティックなフレグランスシリーズ
+
+商品名：
+Parfum Histoire（パルファム・イストワール）
+✧ 追憶＊集いし三人の魔法使い
+✧ 衝突！思い還しの返礼祭
+発売元：pattythree株式会社
+
+ただいまよりご予約開始！
+
+~~~~~~
+pattythree-shop-product.jp/c…
+ersetze links
+link: pattythree-shop-product.jp/c…
+link ersetzt mit: https://pattythree-shop-product.jp/collections/fragrance_1215
+scraping images
+added image link: /pic/orig/media%2FG8QtYdGagAAJg-M.jpg
+Image image_1.jpg downloaded successfully!
+login success
+4036 2286
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 3:44 AM UTC
+saved timestamp successfully
+scraping post
+tweet text: ＼🌟あんスタ！！流行語大賞2025🌟／
+
+2025年の『あんスタ！！』を象徴する流行語を大募集❗
+
+プロデューサーの皆さまの中で最も話題になった『あんスタ！！』にまつわる言葉を
+ハッシュタグ【#あんスタ流行語大賞_2025】を付けて投稿してください✨
+
+募集期間は【12月18日 24時】まで！
+
+#あんスタ
+ersetze links
+link: #あんスタ流行語大賞_2025
+link: #あんスタ
+scraping images
+added image link: /pic/orig/media%2FG730ZMjbQAAUw1v.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ流行語大賞_2025】を付けて投稿してください✨
+extracted hashtag:  #あんスタ
+login success
+1920 1080
+failed to post
+deleted images from disk
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:45 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+added
+Posted at : Dec 16, 2025 · 09:00 AM 
+added
+Posted at : Dec 16, 2025 · 06:00 AM 
+added
+Posted at : Dec 16, 2025 · 03:44 AM 
+still too old
+stop searching
+scraping post
+tweet text: ＼🌟あんスタ！！流行語大賞2025🌟／
+
+2025年の『あんスタ！！』を象徴する流行語を大募集❗
+
+プロデューサーの皆さまの中で最も話題になった『あんスタ！！』にまつわる言葉を
+ハッシュタグ【#あんスタ流行語大賞_2025】を付けて投稿してください✨
+
+募集期間は【12月18日 24時】まで！
+
+#あんスタ
+ersetze links
+link: #あんスタ流行語大賞_2025
+link: #あんスタ
+scraping images
+added image link: /pic/orig/media%2FG730ZMjbQAAUw1v.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ流行語大賞_2025】を付けて投稿してください✨
+extracted hashtag:  #あんスタ
+login success
+1920 1080
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 6:00 AM UTC
+saved timestamp successfully
+scraping post
+tweet text: 【お知らせ】
+12月17日 0時〜
+⁠「Merry Christmas！アドベントカレンダーミッション」を開催予定🔔
+
+クリスマスまであと9日🎄
+毎日ログインするだけで
+『Basic』 ESコイン1000枚
+『Music』 スフィアコイン10枚
+をGET❗️
+さらに、メガマニーなどのアイテムも受け取れます♪
+
+#あんスタ
+ersetze links
+link: #あんスタ
+scraping images
+added image link: /pic/orig/media%2FG8DQIQabYAIcZ7f.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ
+login success
+1920 1080
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 9:00 AM UTC
+saved timestamp successfully
+scraping post
+tweet text: 【『MELLOW DEAR US』ラジオ】
+
+   🛬✨️1st JAPAN Tour✨️🛫
+   【NICE to meet YOU !!】
+.˚⊹⁺‧┈┈┈┈┈┈┈┈┈‧⁺ ⊹˚.
+
+第1回 in 北海道
+配信日が12月19日に決定しました！
+
+🥛ぜひお楽しみに🦀
+ensemble-stars.jp/mellowdear…
+
+#あんスタ #ナイチュー
+ersetze links
+link: ensemble-stars.jp/mellowdear…
+link ersetzt mit: https://ensemble-stars.jp/mellowdearus_radio/
+link: #あんスタ
+link: #ナイチュー
+scraping images
+added image link: /pic/orig/media%2FG8QYJe-a4AAoDxn.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ
+extracted hashtag:  #ナイチュー
+login success
+1200 628
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 9:05 AM UTC
+saved timestamp successfully
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 09:06 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:00 PM 
+added
+Posted at : Dec 16, 2025 · 09:05 AM 
+still too old
+stop searching
+scraping post
+tweet text: 【誕生日のお知らせ】
+
+本日、12月17日は
+STARMAKER PRODUCTION所属
+ユニット『Trickstar』
+
+   🎉氷鷹 北斗の誕生日！！🎉
+🎊🎂HAPPY BIRTHDAY！！🎂🎊
+
+#あんスタ #氷鷹北斗誕生祭2025
+ersetze links
+link: #あんスタ
+link: #氷鷹北斗誕生祭2025
+scraping images
+added image link: /pic/orig/media%2FG8LvDrWbEAEOs7L.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ
+extracted hashtag:  #氷鷹北斗誕生祭2025
+login success
+1200 628
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 3:00 PM UTC
+saved timestamp successfully
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:01 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+added
+Posted at : Dec 16, 2025 · 03:00 PM 
+still too old
+stop searching
+scraping post
+tweet text: 【誕生日のお知らせ】
+
+本日は🎊🎂氷鷹 北斗の誕生日！！🎂🎊
+
+キャンペーンを進めてGETできるルーム衣装【Bright me up!!衣装（北斗・バースデー）】を紹介します♪👕
+フェスプロデュース/ライブでナイス👍️を集めて、バースデー撮影を進めましょう！
+
+#あんスタ #氷鷹北斗誕生祭2025
+ersetze links
+link: #あんスタ
+link: #氷鷹北斗誕生祭2025
+scraping images
+added image link: /pic/orig/media%2FG8LzDyqaIAAc71X.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ
+extracted hashtag:  #氷鷹北斗誕生祭2025
+login success
+1200 628
+posted successfully
+deleted images from disk
+attempting to save  Dec 16, 2025 · 3:10 PM UTC
+saved timestamp successfully
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 16, 2025 · 03:11 PM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 17, 2025 · 01:00 AM 
+added
+Posted at : Dec 16, 2025 · 03:10 PM 
+still too old
+stop searching
+scraping post
+tweet text: 【お知らせ】
+本日 0時〜
+⁠「Merry Christmas！アドベントカレンダーミッション」を開催中です🔔
+
+クリスマスまであと9日🎄
+毎日ログインするだけで
+『Basic』 ESコイン1000枚
+『Music』 スフィアコイン10枚
+をGET❗️
+さらに、メガマニーなどのアイテムも受け取れます♪
+
+#あんスタ
+ersetze links
+link: #あんスタ
+scraping images
+added image link: /pic/orig/media%2FG8DQIQabYAIcZ7f.jpg
+Image image_1.jpg downloaded successfully!
+extracted hashtag:  #あんスタ
+login success
+1920 1080
+posted successfully
+deleted images from disk
+attempting to save  Dec 17, 2025 · 1:00 AM UTC
+saved timestamp successfully
+starte scrape nitter
+Last Timestamp: Dec 17, 2025 · 01:01 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 17, 2025 · 09:00 AM 
+added
+Posted at : Dec 17, 2025 · 01:00 AM 
+still too old
+stop searching
+scraping post
+tweet text: ◤￣￣￣￣￣￣￣￣￣￣
+　  あんスタユニソン
+リクエストアワー特別号
+　　- Superbloom -
+＿＿＿＿＿＿＿＿＿＿◢
+
+12月18日 20時〜
+【Day.3特集】をニコニコ＆あんスタチャンネルにて生配信予定です！
+スタフォニの思い出を楽曲と一緒に振り返りましょう♪
+
+live.nicovideo.jp/watch/lv34…
+
+#あんスタ
+ersetze links
+link: live.nicovideo.jp/watch/lv34…
+link ersetzt mit: https://live.nicovideo.jp/watch/lv349383965
+link: #あんスタ
+scraping images
+login success
+extracted hashtag:  #あんスタ
+just posted
+attempting to save  Dec 17, 2025 · 9:00 AM UTC
+saved timestamp successfully
+starte scrape nitter
+Last Timestamp: Dec 17, 2025 · 09:01 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 17, 2025 · 09:00 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 17, 2025 · 09:01 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 17, 2025 · 09:00 AM 
+still too old
+stop searching
+starte scrape nitter
+Last Timestamp: Dec 17, 2025 · 09:01 AM 
+Wieviele schnappt der sich? 20
+Posted at : Dec 14, 2025 · 09:00 PM 
+too old!
+Posted at : Dec 17, 2025 · 09:00 AM 
+still too old
+stop searching

@@ -1,0 +1,7 @@
+playwright
+atproto
+pillow
+python-dotenv
+feedparser
+requests
+flask
