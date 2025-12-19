@@ -9,3 +9,4 @@ The bot is deployed via Docker and can then be run on a crontab to regularly che
 > [bot.py](BskyRepostBot/scripts/bot.py)
     Creates the bsky post with the tweet data and posts it via atproto API
 
+Working example: [link](https://bsky.app/profile/enstars-bot.bsky.social)
