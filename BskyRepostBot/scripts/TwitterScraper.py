@@ -18,8 +18,7 @@ class TwitterScraper:
         #self.timestamp_path = 'timestamp.json'
 
         if not os.path.exists(self.timestamp_path):
-            print("existiert nicht")
-            raise Exception("timestamp file fehlt!")
+            raise Exception("timestamp file missing!")
 
     def save_timestamp(self, time:str):
         print("attempting to save " , time)
@@ -37,47 +36,12 @@ class TwitterScraper:
             return None
 
 
-    def scrape_tweet_data(self,link):
-        print("scraping ", link)
-
-        post = {}
-
-        with sync_playwright() as playwright:
-            browser = playwright.firefox.launch(headless=True)
-            page = browser.new_page()
-            page.goto(link)
-            page.wait_for_selector("[data-testid='tweet']")
-
-            tweet_text = page.query_selector('div[data-testid="tweetText"]').inner_text()
-            print(page.query_selector('div[data-testid="tweetText"]').inner_text())
-            post["text"] = tweet_text
-
-            print("check for images")
-            images = page.query_selector_all('img[src*="pbs.twimg.com/media/"]')
-            print("images found: " + str(len(images)))
-            image_links = []
-
-            ad_image = "https://pbs.twimg.com/media/G2mXZqkWMAAhLlQ?format=jpg&name=240x240"
-
-            for i in images:
-                image_url:str = i.get_attribute('src')
-                if image_url and image_url != ad_image:
-                    image_links.append(image_url)
-                    print("image added: ", image_url)
-
-                if len(image_links) >= 4:
-                    break
-
-            post["images"] = self.scrape_images(image_links)
-            browser.close()
-            return post
-
-    def scrape_images(self,urls):
+    def scrape_images(self, urls):
         if not os.path.exists(self.image_folder):
             os.makedirs(self.image_folder)
 
         saved_paths = []
-        for i,url in enumerate(urls):
+        for i, url in enumerate(urls):
             response = requests.get(url, stream=True)
             response.raise_for_status()  # Raise an error for bad responses
 
@@ -96,8 +60,8 @@ class TwitterScraper:
         return saved_paths
 
     def scrape_nitter(self, url):
-        #go to nitter ensemble_stars
-        print("starte scrape nitter")
+        # go to nitter ensemble_stars
+        print("start scrape nitter")
         bot = Bot()
         with sync_playwright() as playwright:
             browser = playwright.firefox.launch(headless=True, args=['--no-remote', '--new-instance'])
@@ -105,24 +69,23 @@ class TwitterScraper:
             page.goto(url)
             page.reload()
 
-            my_time = self.get_timestamp() + timedelta(minutes=1)
+            my_time = self.get_timestamp() + timedelta(seconds=1)
             print("Last Timestamp: " + datetime.strftime(my_time, self.time_format))
             #get all recent tweets
             tweets: list = page.locator("div.timeline-item").all()
-            print("Wieviele schnappt der sich? " + str(len(tweets)))
             tweets_to_repost: list = []
-            pinned_skipped: bool = False #if theres a pinned there'll be one old tweet
             for t in tweets :
+                #exclude qrt and pinned
+                if t.locator("div.quote").count() > 0 or t.locator("div.pinned").count() > 0:
+                    continue
                 time_posted = datetime.strptime(t.locator("span.tweet-date > a").get_attribute("title"), self.time_format)
                 print("Posted at : " + datetime.strftime(time_posted, self.time_format))
-                if my_time < time_posted:
+                #include retweets
+                if my_time < time_posted or t.locator("div.retweet-header").count() > 0:
                     print("added")
                     tweets_to_repost.append(t)
-                elif not pinned_skipped:
-                    pinned_skipped = True
-                    print("too old!")
                 else:
-                    print("still too old")
+                    print("Too old")
                     print("stop searching")
                     break
 
@@ -145,13 +108,13 @@ class TwitterScraper:
         print("tweet text: " + tweet_text)
         links = content.locator("a").all()
 
-        print("ersetze links")
+        print("replace links")
         for link in links:
             link_text = link.inner_text()
             print("link: " + link_text)
             url = link.get_attribute("href")
             if url and link_text[0] != '#':
-                print("link ersetzt mit: " + url)
+                print("link replaced with: " + url)
                 tweet_text = tweet_text.replace(link_text, url)
         post["text"] = tweet_text
         post["images"] = self.scrape_image_nitter(page, tweet)
@@ -191,3 +154,39 @@ class TwitterScraper:
             saved_paths.append(image_path)
 
         return saved_paths
+
+    #
+    # def scrape_tweet_data(self,link):
+    #     print("scraping ", link)
+    #
+    #     post = {}
+    #
+    #     with sync_playwright() as playwright:
+    #         browser = playwright.firefox.launch(headless=True)
+    #         page = browser.new_page()
+    #         page.goto(link)
+    #         page.wait_for_selector("[data-testid='tweet']")
+    #
+    #         tweet_text = page.query_selector('div[data-testid="tweetText"]').inner_text()
+    #         print(page.query_selector('div[data-testid="tweetText"]').inner_text())
+    #         post["text"] = tweet_text
+    #
+    #         print("check for images")
+    #         images = page.query_selector_all('img[src*="pbs.twimg.com/media/"]')
+    #         print("images found: " + str(len(images)))
+    #         image_links = []
+    #
+    #         ad_image = "https://pbs.twimg.com/media/G2mXZqkWMAAhLlQ?format=jpg&name=240x240"
+    #
+    #         for i in images:
+    #             image_url:str = i.get_attribute('src')
+    #             if image_url and image_url != ad_image:
+    #                 image_links.append(image_url)
+    #                 print("image added: ", image_url)
+    #
+    #             if len(image_links) >= 4:
+    #                 break
+    #
+    #         post["images"] = self.scrape_images(image_links)
+    #         browser.close()
+    #         return post
