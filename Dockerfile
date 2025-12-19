@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install -r requirements.txt
 COPY BskyRepostBot .
+COPY /persistent_data/timestamp.json .
+COPY entrypoint.sh .
 
-
-CMD ["python", "main.py"]
+CMD ["/app/entrypoint.sh"]
