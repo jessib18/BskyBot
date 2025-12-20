@@ -21,7 +21,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.ENBOT_PK }}
         SERVER_IP: ${{ secrets.ENBOT_IP }}
-      run: 
+      run: |
         # Set up SSH > connect > load tar on server 
         echo "$SSH_PRIVATE_KEY" > private_key
         chmod 600 private_key
