@@ -14,6 +14,7 @@ class TwitterScraper:
     time_format:str = "%b %d, %Y · %I:%M %p %Z"
 
     def __init__(self):
+        print("init TwitterScraper")
         self.timestamp_path='/persistent_data/timestamp.json'
         #self.timestamp_path = 'timestamp.json'
 
@@ -64,7 +65,7 @@ class TwitterScraper:
         print("start scrape nitter")
         bot = Bot()
         with sync_playwright() as playwright:
-            browser = playwright.firefox.launch(headless=True, args=['--no-remote', '--new-instance'])
+            browser = playwright.firefox.launch(headless=True)
             page = browser.new_page()
             page.goto(url)
             page.reload()

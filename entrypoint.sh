@@ -5,4 +5,5 @@ if [ ! -f /persistent_data/timestamp.json ]; then
 fi
 
 cd /app
-python main.py 
+echo "starte main.py"
+python -u main.py 

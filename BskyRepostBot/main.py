@@ -6,8 +6,8 @@ from scripts.TwitterScraper import TwitterScraper
 from datetime import datetime
 
 
-
 def main():
+    print("++++start+++++")
     load_dotenv()
     bot = Bot()
     url="https://nitter.net/ensemble_stars"

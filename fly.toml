@@ -1,0 +1,31 @@
+# fly.toml app configuration file generated for bskybot-long-grass-6297 on 2025-12-19T23:33:13+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bskybot-long-grass-6297'
+primary_region = 'ams'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '512mb'
+  cpus = 1
+  memory_mb = 512
+
+[env]
+  BLUESKY_USER="enstars-bot.bsky.social"
+  BLUESKY_PW="ttyq-hbag-kx3t-y6xf"
+  BLUESKY_DID="did:plc:smpswiqmtehxtdq2u5j4fv7j"
+
+[mounts]
+  source = "timestamp_volume"
+  destination = "/persistent_data"
