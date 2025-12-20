@@ -23,7 +23,8 @@ jobs:
         SERVER_IP: ${{ secrets.ENBOT_IP }}
       run: 
         # Set up SSH > connect > load tar on server 
-        echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
         scp -i private_key -o StrictHostKeyChecking=no image.tar root@$SERVER_IP:/tmp/
         ssh -i private_key -o StrictHostKeyChecking=no root@$SERVER_IP "
             docker load --input /tmp/image.tar &&
