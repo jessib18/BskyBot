@@ -27,6 +27,7 @@ jobs:
         chmod 600 private_key
         scp -i private_key -o StrictHostKeyChecking=no image.tar root@$SERVER_IP:/tmp/
         ssh -i private_key -o StrictHostKeyChecking=no root@$SERVER_IP "
+            ls &&
             docker load --input /tmp/image.tar &&
             rm /tmp/image.tar
           "
