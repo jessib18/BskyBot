@@ -1,0 +1,33 @@
+name: Build & Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    name: build and deploy to server
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag enbot:latest
+
+    - name: Save image to .tar
+      run: docker save enbot:latest -o image.tar
+
+    - name: Deploy to server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.ENBOT_PK }}
+        SERVER_IP: ${{ secrets.ENBOT_IP }}
+      run: |
+        # Set up SSH > connect > load tar on server 
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        scp -i private_key -o StrictHostKeyChecking=no image.tar root@$SERVER_IP:/tmp/
+        ssh -i private_key -o StrictHostKeyChecking=no root@$SERVER_IP "
+            ls &&
+            docker load --input /tmp/image.tar &&
+            rm /tmp/image.tar
+          "
