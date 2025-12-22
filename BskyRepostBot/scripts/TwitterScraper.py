@@ -70,19 +70,19 @@ class TwitterScraper:
             page.goto(url)
             page.reload()
 
-            my_time = self.get_timestamp() + timedelta(seconds=1)
+            my_time = self.get_timestamp() + timedelta(minutes=1)
             print("Last Timestamp: " + datetime.strftime(my_time, self.time_format))
             #get all recent tweets
             tweets: list = page.locator("div.timeline-item").all()
             tweets_to_repost: list = []
             for t in tweets :
                 #exclude qrt and pinned
-                if t.locator("div.quote").count() > 0 or t.locator("div.pinned").count() > 0:
+                if t.locator("div.quote").count() > 0 or t.locator("div.pinned").count() > 0 or t.locator("div.retweet-header").count() > 0:
                     continue
                 time_posted = datetime.strptime(t.locator("span.tweet-date > a").get_attribute("title"), self.time_format)
                 print("Posted at : " + datetime.strftime(time_posted, self.time_format))
                 #include retweets
-                if my_time < time_posted or t.locator("div.retweet-header").count() > 0:
+                if my_time < time_posted :
                     print("added")
                     tweets_to_repost.append(t)
                 else:
