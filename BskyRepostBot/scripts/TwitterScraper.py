@@ -143,7 +143,7 @@ class TwitterScraper:
             response.raise_for_status()  # Raise an error for bad responses
 
             # Extract the image file name from the URL
-            image_name = f"image_{i + 1}.jpg"  # You can customize the naming scheme here
+            image_name = f"image_{i + 1}.jpg"
             image_path = os.path.join(self.image_folder, image_name)
 
             # Save the image to the disk

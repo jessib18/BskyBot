@@ -173,7 +173,7 @@ class Bot:
                     img = img.convert("RGB")
 
                 img_bytes = io.BytesIO()
-                img.save(img_bytes, format="WEBP", quality=95)
+                img.save(img_bytes, format="WEBP", quality=85)
                 uploaded_images.append(img_bytes.getvalue())
             ratios.append(self.get_aspect_ratio(path))
 
