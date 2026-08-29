@@ -7,104 +7,27 @@
 	"tweets": [
 		{
 			"type": "tweet",
-			"id": "2092971022815535396",
-			"url": "https://x.com/ensemble_stars/status/2092971022815535396",
-			"twitterUrl": "https://twitter.com/ensemble_stars/status/2092971022815535396",
-			"text": "(1/10)【お知らせ】\n\n『月刊 あんさんぶるスタジオ！！8月号』\nご視聴ありがとうございました📺\n\n「ES花火大会2026」開催決定‼️\n\n🎇特設サ���ト本日オープン🎆\nhttps://ensemble-stars.jp/firework_campaign2026/\n\n#あんスタ https://t.co/qxiJcsquJE",
-			"source": "Twitter Web App",
-			"retweetCount": 2558,
-			"replyCount": 1,
-			"likeCount": 10196,
-			"quoteCount": 539,
-			"viewCount": 394501,
-			"createdAt": "Thu Aug 27 13:42:32 +0000 2026",
-			"lang": "ja",
-			"bookmarkCount": 611,
-			"isReply": false,
-			"inReplyToId": null,
-			"conversationId": "2092971022815535396",
-			"media": [
-				{
-					"type": "video",
-					"url": "https://pbs.twimg.com/media/HQujkeFbwAIaIFv.jpg",
-					"expanded_url": "https://x.com/ensemble_stars/status/2092971022815535396/video/1",
-					"video_url": "https://video.twimg.com/amplify_video/2092946038986354688/vid/avc1/1920x1080/9s9loKpwg19HKLJQ.mp4?tag=29"
-				}
-			],
-			"entities": {
-				"hashtags": [
-					{
-						"indices": [
-							111,
-							116
-						],
-						"text": "あんスタ"
-					}
-				],
-				"symbols": [],
-				"timestamps": [],
-				"urls": [
-					{
-						"display_url": "ensemble-stars.jp/firework_campa…",
-						"expanded_url": "https://ensemble-stars.jp/firework_campaign2026/",
-						"indices": [
-							86,
-							109
-						],
-						"url": "https://t.co/n7gr4DLBwY"
-					}
-				],
-				"user_mentions": []
-			},
-			"author": {
-				"type": "user",
-				"userName": "ensemble_stars",
-				"url": "https://x.com/ensemble_stars",
-				"id": "2848709654",
-				"name": "あんさんぶるスターズ！！【公式】",
-				"isVerified": false,
-				"isBlueVerified": true,
-				"profilePicture": "https://pbs.twimg.com/profile_images/1917051142221287424/Gz4Mx2hZ_normal.png",
-				"coverPicture": "https://pbs.twimg.com/profile_banners/2848709654/1745895585",
-				"description": "アイドルプロデュースゲーム『あんさんぶるスターズ！！』の総合情報アカウントです。 2つのアプリを公開中！！\nBasic: @enstars_basic\nMusic: @enstars_music\nYouTube: https://t.co/NxiUm7taer\nコンテンツ規約: https://t.co/gKe61KKZrS",
-				"location": "アンサンブルスクエア",
-				"followers": 1462602,
-				"following": 180,
-				"createdAt": "Thu Oct 09 11:00:20 +0000 2014",
-				"canDm": false
-			},
-			"quoted_tweet": null,
-			"retweeted_tweet": null
-		},
-		{
-			"type": "tweet",
-			"id": "2093579531559088517",
-			"url": "https://x.com/ensemble_stars/status/2093579531559088517",
-			"twitterUrl": "https://twitter.com/ensemble_stars/status/2093579531559088517",
-			"text": "【お知らせ】\n\n本日15時〜\n周年記念カード復刻スカウト\n『リズリン編』と『ニューディ編』を開催中です❗\n\n記念イラストを使用した⭐️4カードが再登場するスカウトです🎶\nアイドルロード��らはルーム衣装やSPPが開放できます✨\n\n#あんスタ https://t.co/zdVFgyA60X",
+			"id": "2093717846941721031",
+			"url": "https://x.com/ensemble_stars/status/2093717846941721031",
+			"twitterUrl": "https://twitter.com/ensemble_stars/status/2093717846941721031",
+			"text": "【誕生日のお知らせ】\n\n本日は🎊🎂深海 奏汰の誕生日！！🎂🎊\n\nキャンペーンを進めてGETできるルーム衣装【バースデーセット】を紹介します♪👕\n\nフェスプロデュース/ライブなどでナイス👍️を集めて、バースデー配信を進めましょう！\n\n#あんスタ #深海奏汰誕生祭2026 https://t.co/29WJdSPzHf",
 			"source": "Userlocal SocialInsight",
-			"retweetCount": 289,
-			"replyCount": 3,
-			"likeCount": 1943,
-			"quoteCount": 93,
-			"viewCount": 178357,
-			"createdAt": "Sat Aug 29 06:00:31 +0000 2026",
+			"retweetCount": 255,
+			"replyCount": 0,
+			"likeCount": 1507,
+			"quoteCount": 29,
+			"viewCount": 101957,
+			"createdAt": "Sat Aug 29 15:10:08 +0000 2026",
 			"lang": "ja",
-			"bookmarkCount": 36,
+			"bookmarkCount": 16,
 			"isReply": false,
 			"inReplyToId": null,
-			"conversationId": "2093579531559088517",
+			"conversationId": "2093717846941721031",
 			"media": [
 				{
 					"type": "photo",
-					"url": "https://pbs.twimg.com/media/HQ3jeg-bgAA1-Ow.jpg",
-					"expanded_url": "https://x.com/ensemble_stars/status/2093579531559088517/photo/1",
-					"video_url": null
-				},
-				{
-					"type": "photo",
-					"url": "https://pbs.twimg.com/media/HQ3jejsa4AA5STm.jpg",
-					"expanded_url": "https://x.com/ensemble_stars/status/2093579531559088517/photo/1",
+					"url": "https://pbs.twimg.com/media/HQ5hSJsawAAOpHM.jpg",
+					"expanded_url": "https://x.com/ensemble_stars/status/2093717846941721031/photo/1",
 					"video_url": null
 				}
 			],
@@ -112,10 +35,17 @@
 				"hashtags": [
 					{
 						"indices": [
-							114,
-							119
+							116,
+							121
 						],
 						"text": "あんスタ"
+					},
+					{
+						"indices": [
+							122,
+							134
+						],
+						"text": "深海奏汰誕生祭2026"
 					}
 				],
 				"symbols": [],
@@ -135,7 +65,7 @@
 				"coverPicture": "https://pbs.twimg.com/profile_banners/2848709654/1745895585",
 				"description": "アイドルプロデュースゲーム『あんさんぶるスターズ！！』の総合情報アカウントです。 2つのアプリを公開中！！\nBasic: @enstars_basic\nMusic: @enstars_music\nYouTube: https://t.co/NxiUm7taer\nコンテンツ規約: https://t.co/gKe61KKZrS",
 				"location": "アンサンブルスクエア",
-				"followers": 1462602,
+				"followers": 1462550,
 				"following": 180,
 				"createdAt": "Thu Oct 09 11:00:20 +0000 2014",
 				"canDm": false

@@ -123,7 +123,7 @@ class Bot:
                 "features": [
                     {
                         "$type": "app.bsky.richtext.facet#tag",
-                        "tag": f"https://bsky.app/hashtag/{h['tag'][1:]}",
+                        "tag": h['tag'][1:],
                     }
                 ],
             })

@@ -183,101 +183,101 @@ class TwitterScraper:
         return response.content
 
 
-    def scrape_nitter(self, url):
-        # go to nitter ensemble_stars
-        print("start scrape nitter")
-        bot = Bot()
-        with sync_playwright() as playwright:
-            browser = playwright.firefox.launch(headless=True)
-            page = browser.new_page()
-            page.goto(url)
-            page.reload()
+    # def scrape_nitter(self, url):
+    #     # go to nitter ensemble_stars
+    #     print("start scrape nitter")
+    #     bot = Bot()
+    #     with sync_playwright() as playwright:
+    #         browser = playwright.firefox.launch(headless=True)
+    #         page = browser.new_page()
+    #         page.goto(url)
+    #         page.reload()
 
-            my_time = self.get_timestamp() + timedelta(minutes=1)
-            print("Last Timestamp: " + datetime.strftime(my_time, self.time_format))
-            #get all recent tweets
-            tweets: list = page.locator("div.timeline-item").all()
-            tweets_to_repost: list = []
-            for t in tweets :
-                #exclude qrt and pinned
-                if t.locator("div.quote").count() > 0 or t.locator("div.pinned").count() > 0 or t.locator("div.retweet-header").count() > 0:
-                    continue
-                time_posted = datetime.strptime(t.locator("span.tweet-date > a").get_attribute("title"), self.time_format)
-                print("Posted at : " + datetime.strftime(time_posted, self.time_format))
-                #include retweets
-                if my_time < time_posted :
-                    print("added")
-                    tweets_to_repost.append(t)
-                else:
-                    print("Too old")
-                    print("stop searching")
-                    break
+    #         my_time = self.get_timestamp() + timedelta(minutes=1)
+    #         print("Last Timestamp: " + datetime.strftime(my_time, self.time_format))
+    #         #get all recent tweets
+    #         tweets: list = page.locator("div.timeline-item").all()
+    #         tweets_to_repost: list = []
+    #         for t in tweets :
+    #             #exclude qrt and pinned
+    #             if t.locator("div.quote").count() > 0 or t.locator("div.pinned").count() > 0 or t.locator("div.retweet-header").count() > 0:
+    #                 continue
+    #             time_posted = datetime.strptime(t.locator("span.tweet-date > a").get_attribute("title"), self.time_format)
+    #             print("Posted at : " + datetime.strftime(time_posted, self.time_format))
+    #             #include retweets
+    #             if my_time < time_posted :
+    #                 print("added")
+    #                 tweets_to_repost.append(t)
+    #             else:
+    #                 print("Too old")
+    #                 print("stop searching")
+    #                 break
 
-            i: int = len(tweets_to_repost) - 1
-            for l in reversed(tweets_to_repost):
-                post = self.scrape_post_nitter(page, l)
-                if post["images"]:
-                    bot.post_with_images(post["images"],post["text"])
-                else: bot.post_text(post["text"])
-                self.save_timestamp(tweets_to_repost[i].locator("span.tweet-date > a").get_attribute("title"))
-                i -= 1
-
-
-
-    def scrape_post_nitter(self, page, tweet):
-        print("scraping post")
-        post = {}
-        content = tweet.locator("div.tweet-content")
-        tweet_text = content.inner_text()
-        print("tweet text: " + tweet_text)
-        links = content.locator("a").all()
-
-        print("replace links")
-        for link in links:
-            link_text = link.inner_text()
-            print("link: " + link_text)
-            url = link.get_attribute("href")
-            if url and link_text[0] != '#':
-                print("link replaced with: " + url)
-                tweet_text = tweet_text.replace(link_text, url)
-        post["text"] = tweet_text
-        post["images"] = self.scrape_image_nitter(page, tweet)
-        return post
+    #         i: int = len(tweets_to_repost) - 1
+    #         for l in reversed(tweets_to_repost):
+    #             post = self.scrape_post_nitter(page, l)
+    #             if post["images"]:
+    #                 bot.post_with_images(post["images"],post["text"])
+    #             else: bot.post_text(post["text"])
+    #             self.save_timestamp(tweets_to_repost[i].locator("span.tweet-date > a").get_attribute("title"))
+    #             i -= 1
 
 
-    def scrape_image_nitter(self, page, tweet):
-        print("scraping images")
-        if not os.path.exists(self.image_folder):
-            os.makedirs(self.image_folder)
 
-        saved_paths = []
+    # def scrape_post_nitter(self, page, tweet):
+    #     print("scraping post")
+    #     post = {}
+    #     content = tweet.locator("div.tweet-content")
+    #     tweet_text = content.inner_text()
+    #     print("tweet text: " + tweet_text)
+    #     links = content.locator("a").all()
 
-        images = tweet.locator("div.attachments a.still-image").all()
-        urls = []
+    #     print("replace links")
+    #     for link in links:
+    #         link_text = link.inner_text()
+    #         print("link: " + link_text)
+    #         url = link.get_attribute("href")
+    #         if url and link_text[0] != '#':
+    #             print("link replaced with: " + url)
+    #             tweet_text = tweet_text.replace(link_text, url)
+    #     post["text"] = tweet_text
+    #     post["images"] = self.scrape_image_nitter(page, tweet)
+    #     return post
 
-        for link in images:
-            url = link.get_attribute("href")
-            print("added image link: " + url)
-            urls.append("https://nitter.net" + url)
+
+    # def scrape_image_nitter(self, page, tweet):
+    #     print("scraping images")
+    #     if not os.path.exists(self.image_folder):
+    #         os.makedirs(self.image_folder)
+
+    #     saved_paths = []
+
+    #     images = tweet.locator("div.attachments a.still-image").all()
+    #     urls = []
+
+    #     for link in images:
+    #         url = link.get_attribute("href")
+    #         print("added image link: " + url)
+    #         urls.append("https://nitter.net" + url)
 
 
-        for i,url in enumerate(urls):
-            response = requests.get(url, stream=True)
-            response.raise_for_status()  # Raise an error for bad responses
+    #     for i,url in enumerate(urls):
+    #         response = requests.get(url, stream=True)
+    #         response.raise_for_status()  # Raise an error for bad responses
 
-            # Extract the image file name from the URL
-            image_name = f"image_{i + 1}.jpg"
-            image_path = os.path.join(self.image_folder, image_name)
+    #         # Extract the image file name from the URL
+    #         image_name = f"image_{i + 1}.jpg"
+    #         image_path = os.path.join(self.image_folder, image_name)
 
-            # Save the image to the disk
-            with open(image_path, 'wb') as f:
-                for chunk in response.iter_content(1024):
-                    f.write(chunk)
+    #         # Save the image to the disk
+    #         with open(image_path, 'wb') as f:
+    #             for chunk in response.iter_content(1024):
+    #                 f.write(chunk)
 
-            print(f"Image {image_name} downloaded successfully!")
-            saved_paths.append(image_path)
+    #         print(f"Image {image_name} downloaded successfully!")
+    #         saved_paths.append(image_path)
 
-        return saved_paths
+    #     return saved_paths
 
     #
     # def scrape_tweet_data(self,link):
