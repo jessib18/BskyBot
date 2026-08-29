@@ -6,20 +6,25 @@ from .bot import Bot
 import requests
 
 
-from playwright.sync_api import Page, sync_playwright, Playwright
+#from playwright.sync_api import Page, sync_playwright, Playwright
 
 class TwitterScraper:
 
     image_folder:str = '././img'
+    video_folder: str = '././vid'
     time_format:str = "%b %d, %Y · %I:%M %p %Z"
 
     def __init__(self):
         print("init TwitterScraper")
         self.timestamp_path='/persistent_data/timestamp.json'
+        self.latest_path='/persistent_data/latest.json'
         #self.timestamp_path = 'timestamp.json'
 
         if not os.path.exists(self.timestamp_path):
             raise Exception("timestamp file missing!")
+        if not os.path.exists(self.latest_path):
+            os.makedirs(os.path.dirname(self.latest_path), exist_ok=True)
+
 
     def save_timestamp(self, time:str):
         print("attempting to save " , time)
@@ -36,6 +41,101 @@ class TwitterScraper:
             print("failed to get timestamp")
             return None
 
+    def get_latest(self):
+        try:
+            with open(self.latest_path, 'r') as f:  # Open file in read mode
+                data = json.load(f)
+                return data.get("latest")
+        except FileNotFoundError:
+            print("failed to get latest")
+            return None
+
+    def set_latest(self, id:str):
+        try:
+            with open(self.latest_path, 'w') as f:  # Open file in write mode
+                json.dump({"latest": id}, f, ensure_ascii=False)
+        except Exception as e:
+            print(f"failed to set latest {e}")
+            return False
+
+
+    def scrape_xapi(self):
+        print("scraping using API")
+        headers = {"Authorization": f"Bearer {os.getenv('XAPI_KEY')}"} 
+        url = "https://api.getxapi.com/twitter/user/tweets?userName=ensemble_stars"
+        response = requests.get(url, headers)
+        data:dict = response.json()
+
+        tweets = data.get("tweets")
+        tweets_to_repost = [] 
+        for t in tweets:
+            if "isPinned" in t: #stupid version of has
+                continue
+            if t.get("id") == self.get_latest():
+                print("caught up!")
+                break
+            tweets_to_repost.append(t)
+
+        if len(tweets_to_repost) > 0:
+            bot = Bot()
+            for tweet in reversed(tweets_to_repost):
+                if len(tweet.get("media")) > 0:
+                    if tweet.get("media")[0].get("type") == "photo":
+                        image_paths = []
+                        #download images
+                        urls = []
+                        for m in tweet.get("media"):
+                            urls.append(m.get("url"))
+                            image_paths = self.scrape_images(urls)
+                        bot.post_image_xapi(image_paths,tweet.get("text"),tweet.get("entities"))
+                    elif tweet.get("media")[0].get("type") == "video":
+                        video_bytes = []
+                        #download videos
+                        for m in tweet.get("media"):
+                            url = m.get("video_url")
+                            video_bytes = self.scrape_videos(url)
+                        bot.post_video_xapi(video_bytes,tweet.get("text"),tweet.get("entities"))
+                else: 
+                    bot.post_text_xapi(tweet.get("text"), tweet.get("entities"))
+                self.set_latest(tweet.get("id"))
+
+    def test_xapi(self, data):
+        print("Lets test a post!")
+        tweets = data.get("tweets")
+        tweets_to_repost = [] 
+        for t in tweets:
+            if "isPinned" in t: #stupid version of has
+                continue
+            if t.get("id") == self.get_latest():
+                print("caught up!")
+                break
+            tweets_to_repost.append(t)
+
+        if len(tweets_to_repost) > 0:
+            bot = Bot()
+            for tweet in reversed(tweets_to_repost):
+                if len(tweet.get("media")) > 0:
+                    if tweet.get("media")[0].get("type") == "photo":
+                        image_paths = []
+                        #download images
+                        urls = []
+                        for m in tweet.get("media"):
+                            urls.append(m.get("url"))
+                            image_paths = self.scrape_images(urls)
+                        bot.post_image_xapi(image_paths,tweet.get("text"),tweet.get("entities"))
+                        self.set_latest(tweet.get("id"))
+                    elif tweet.get("media")[0].get("type") == "video":
+                        video_bytes = []
+                        #download videos
+                        for m in tweet.get("media"):
+                            url = m.get("video_url")
+                            video_bytes = self.scrape_videos(url)
+                        bot.post_video_xapi(video_bytes,tweet.get("text"), tweet.get("entities"))
+                else: 
+                    bot.post_text_xapi(tweet.get("text"), tweet.get("entities"))
+                self.set_latest(tweet.get("id"))
+        
+            
 
     def scrape_images(self, urls):
         if not os.path.exists(self.image_folder):
@@ -59,6 +159,26 @@ class TwitterScraper:
             saved_paths.append(image_path)
 
         return saved_paths
+
+    def scrape_videos(self,url):
+        # if not os.path.exists(self.video_folder):
+        #     print("Path missing for videos")
+        #     os.makedirs(self.video_folder)
+        #     print(f"Created path {self.video_folder}")
+
+        response = requests.get(url, stream=True)
+        response.raise_for_status()  # Raise an error for bad responses
+
+        # video_name = f"video.mp4"
+        # video_path = os.path.join(self.video_folder, video_name)
+
+        # # Save the video to the disk
+        # with open(video_path, 'wb') as f:
+        #     for chunk in response.iter_content(1024):
+        #         f.write(chunk)
+        # print(f"Video {video_name} downloaded successfully!")
+        return response.content
+
 
     def scrape_nitter(self, url):
         # go to nitter ensemble_stars

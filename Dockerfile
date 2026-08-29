@@ -5,8 +5,8 @@ WORKDIR /app
 COPY BskyRepostBot/requirements.txt .
 
 
-RUN pip install playwright && \
-    playwright install --with-deps
+#RUN pip install playwright && \
+#    playwright install --with-deps
 
 #webp support 
 RUN apt-get update && apt-get install -y \
