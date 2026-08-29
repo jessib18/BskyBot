@@ -62,8 +62,11 @@ class TwitterScraper:
     def scrape_xapi(self):
         print("scraping using API")
         headers = {"Authorization": f"Bearer {os.getenv('XAPI_KEY')}"} 
-        url = "https://api.getxapi.com/twitter/user/tweets?userName=ensemble_stars"
-        response = requests.get(url, headers)
+        url = "https://api.getxapi.com/twitter/user/tweets"
+        params = {"userName":"ensemble_stars"}
+        response = requests.get(url, params=params, headers=headers)
+        print(f"API status code: {response.status_code}")
+        response.raise_for_status()
         data:dict = response.json()
 
         tweets = data.get("tweets")

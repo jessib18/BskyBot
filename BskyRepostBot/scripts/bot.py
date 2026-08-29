@@ -136,6 +136,8 @@ class Bot:
             expanded = u.get("expanded_url")
             if short_url and short_url in text:
                 text = text.replace(short_url, expanded)
+
+        text = re.sub(r'\s+https://t\.co/\S+', '', text)
         return text
 
     def parse_urls(self,text: str) -> List[Dict]:
@@ -261,7 +263,7 @@ class Bot:
 
 
     def post_image_xapi(self, image_paths, text, x_facets):
-        self.expand_urls(text, x_facets)
+        text = self.expand_urls(text, x_facets)
         f = self.parse_facets(text)
         self.try_login()
         
@@ -310,7 +312,7 @@ class Bot:
                 raise e
 
     def post_video_xapi(self, video_bytes, text, x_facets):
-        self.expand_urls(text, x_facets)
+        text = self.expand_urls(text, x_facets)
         f = self.parse_facets(text)
         self.try_login()
         try:
@@ -327,7 +329,7 @@ class Bot:
 
     def post_text_xapi(self,text,x_facets):
         self.try_login()
-        self.expand_urls(text, x_facets)
+        text = self.expand_urls(text, x_facets)
         # post_data = {"text": text,
         #              "createdAt": time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime()),
         #              "facets": self.parse_facets(text)}
