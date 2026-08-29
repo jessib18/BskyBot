@@ -1,5 +1,5 @@
 ## About
-This is a simple python based webscraper which scrapes the newest posts from a twitter account (using nitter) and reposts them, including working hashtags, links and images to a specified bsky account via the atproto API 
+Pulls tweets via xapi and reposts them to bsky
 
 The bot is deployed via Docker and can then be run on a crontab to regularly check for new posts
 
