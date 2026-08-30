@@ -13,10 +13,10 @@ def main():
     bot = Bot()
     #url="https://nitter.net/ensemble_stars"
     scraper = TwitterScraper()
-    #scraper.scrape_xapi()
-    with open('test_tweet.json') as f:
-        test_tweet:dict = json.load(f)
-    scraper.test_xapi(test_tweet)
+    scraper.scrape_xapi()
+    #with open('test_tweet.json') as f:
+    #    test_tweet:dict = json.load(f)
+    #scraper.test_xapi(test_tweet)
     print("+++++end+++++")
 
 if __name__ == "__main__":
