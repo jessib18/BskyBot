@@ -320,6 +320,9 @@ class Bot:
         self.try_login()
         
         max_retries = 5
+        if len(video_bytes) > 50 * 1024 * 1024:
+            print("video too large! ")
+            raise Exception("Video size is too large")
         for attempt in range(max_retries):
             try:
                 print(f"uploading video ({len(video_bytes)} bytes), attempt {attempt+1}")
@@ -331,6 +334,8 @@ class Bot:
             if attempt == max_retries - 1:
                 raise
             time.sleep(2 ** attempt)
+
+
         
         # try:
         #     post = self.client.send_video(
