@@ -92,12 +92,16 @@ class TwitterScraper:
                             image_paths = self.scrape_images(urls)
                         bot.post_image_xapi(image_paths,tweet.get("text"),tweet.get("entities"))
                     elif tweet.get("media")[0].get("type") == "video":
-                        video_bytes = []
-                        #download videos
-                        for m in tweet.get("media"):
-                            url = m.get("video_url")
-                            video_bytes = self.scrape_videos(url)
-                        bot.post_video_xapi(video_bytes,tweet.get("text"),tweet.get("entities"))
+                        try:
+                            video_bytes = []
+                            #download videos
+                            for m in tweet.get("media"):
+                                url = m.get("video_url")
+                                video_bytes = self.scrape_videos(url)
+                            bot.post_video_xapi(video_bytes,tweet.get("text"),tweet.get("entities"))
+                        except Exception as e:
+                            print("Skipping video Tweet!")
+                            continue
                 else: 
                     bot.post_text_xapi(tweet.get("text"), tweet.get("entities"))
                 self.set_latest(tweet.get("id"))
@@ -164,23 +168,32 @@ class TwitterScraper:
         return saved_paths
 
     def scrape_videos(self,url):
-        # if not os.path.exists(self.video_folder):
-        #     print("Path missing for videos")
-        #     os.makedirs(self.video_folder)
-        #     print(f"Created path {self.video_folder}")
+        import subprocess, tempfile
 
         response = requests.get(url, stream=True)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status()
+        raw = response.content
 
-        # video_name = f"video.mp4"
-        # video_path = os.path.join(self.video_folder, video_name)
+        with tempfile.TemporaryDirectory() as d:
+            in_path = os.path.join(d, "in.mp4")
+            out_path = os.path.join(d, "out.mp4")
+            with open(in_path, "wb") as f:
+                f.write(raw)
 
-        # # Save the video to the disk
-        # with open(video_path, 'wb') as f:
-        #     for chunk in response.iter_content(1024):
-        #         f.write(chunk)
-        # print(f"Video {video_name} downloaded successfully!")
-        return response.content
+            subprocess.run([
+                "ffmpeg", "-y", "-i", in_path,
+                "-vf", "scale=-2:720",
+                "-c:v", "libx264", "-crf", "28", "-preset", "veryfast",
+                "-c:a", "aac", "-b:a", "96k",
+                out_path
+            ], check=True)
+
+            with open(out_path, "rb") as f:
+                return f.read()
+        # response = requests.get(url, stream=True)
+        # response.raise_for_status()  # Raise an error for bad responses
+
+        # return response.content
 
 
     # def scrape_nitter(self, url):
