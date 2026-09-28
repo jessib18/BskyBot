@@ -315,16 +315,32 @@ class Bot:
         text = self.expand_urls(text, x_facets)
         f = self.parse_facets(text)
         self.try_login()
-        try:
-            post = self.client.send_video(
-                video=video_bytes,
-                text=text,
-                facets=f
-            )
-            print("posted successfully")
-        except Exception as e:
-            print("failed to post")
-            raise e
+        
+        self.client._client.timeout = httpx.Timeout(connect=10.0, read=120.0, write=120.0, pool=10.0)
+
+        max_retries = 5
+        for attempt in range(max_retries):
+            try:
+                print(f"uploading video ({len(video_bytes)} bytes), attempt {attempt+1}")
+                post = self.client.send_video(video=video_bytes, text=text, facets=f)
+                print("posted successfully")
+                return
+            except Exception as e:
+                print(f"failed to post: {e}")
+            if attempt == max_retries - 1:
+                raise
+            time.sleep(2 ** attempt)
+        
+        # try:
+        #     post = self.client.send_video(
+        #         video=video_bytes,
+        #         text=text,
+        #         facets=f
+        #     )
+        #     print("posted successfully")
+        # except Exception as e:
+        #     print("failed to post")
+        #     raise e
 
 
     def post_text_xapi(self,text,x_facets):
