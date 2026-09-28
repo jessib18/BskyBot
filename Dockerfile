@@ -12,7 +12,6 @@ COPY BskyRepostBot/requirements.txt .
 RUN apt-get update && apt-get install -y \
     libwebp-dev \
     libpci3 \
-    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install -r requirements.txt

@@ -168,32 +168,11 @@ class TwitterScraper:
         return saved_paths
 
     def scrape_videos(self,url):
-        import subprocess, tempfile
-
+        
         response = requests.get(url, stream=True)
-        response.raise_for_status()
-        raw = response.content
+        response.raise_for_status()  # Raise an error for bad responses
 
-        with tempfile.TemporaryDirectory() as d:
-            in_path = os.path.join(d, "in.mp4")
-            out_path = os.path.join(d, "out.mp4")
-            with open(in_path, "wb") as f:
-                f.write(raw)
-
-            subprocess.run([
-                "ffmpeg", "-y", "-i", in_path,
-                "-vf", "scale=-2:720",
-                "-c:v", "libx264", "-crf", "28", "-preset", "veryfast",
-                "-c:a", "aac", "-b:a", "96k",
-                out_path
-            ], check=True)
-
-            with open(out_path, "rb") as f:
-                return f.read()
-        # response = requests.get(url, stream=True)
-        # response.raise_for_status()  # Raise an error for bad responses
-
-        # return response.content
+        return response.content
 
 
     # def scrape_nitter(self, url):
