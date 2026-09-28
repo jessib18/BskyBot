@@ -2,6 +2,7 @@ import io
 import os
 import time
 import re
+import httpx
 from typing import List, Dict
 from http.client import responses
 
