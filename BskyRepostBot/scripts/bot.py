@@ -11,7 +11,9 @@ from atproto import Client
 from PIL import Image
 
 
-
+httpx._config.DEFAULT_TIMEOUT_CONFIG = httpx.Timeout(
+    connect=10.0, read=60.0, write=60.0, pool=10.0
+)
 
 BLUESKY_USER=""
 BLUESKY_PW=""
@@ -317,8 +319,6 @@ class Bot:
         f = self.parse_facets(text)
         self.try_login()
         
-        self.client._client.timeout = httpx.Timeout(connect=10.0, read=120.0, write=120.0, pool=10.0)
-
         max_retries = 5
         for attempt in range(max_retries):
             try:
