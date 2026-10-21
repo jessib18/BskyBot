@@ -17,7 +17,7 @@ jobs:
         docker system df
         sudo docker image prune -af
         sudo docker builder prune -af
-        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL
+        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android 
         df -h
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag enbot:latest
@@ -36,6 +36,8 @@ jobs:
         scp -i private_key -o StrictHostKeyChecking=no image.tar root@$SERVER_IP:/tmp/
         ssh -i private_key -o StrictHostKeyChecking=no root@$SERVER_IP "
             ls &&
+            df -h / &&
+            docker system prune -af &&
             docker load --input /tmp/image.tar &&
             rm /tmp/image.tar
           "
