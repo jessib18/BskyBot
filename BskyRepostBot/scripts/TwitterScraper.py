@@ -53,6 +53,7 @@ class TwitterScraper:
     def set_latest(self, id:str):
         try:
             with open(self.latest_path, 'w') as f:  # Open file in write mode
+                print("Latest Tweet: " + id)
                 json.dump({"latest": id}, f, ensure_ascii=False)
         except Exception as e:
             print(f"failed to set latest {e}")
@@ -77,6 +78,8 @@ class TwitterScraper:
             if t.get("id") == self.get_latest():
                 print("caught up!")
                 break
+            if tweet.get("retweeted_tweet"):
+                continue
             tweets_to_repost.append(t)
 
         if len(tweets_to_repost) > 0:
