@@ -11,6 +11,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Free disk space
+      run: |
+        df -h
+        docker system df
+        sudo docker image prune -af
+        sudo docker builder prune -af
+        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL
+        df -h
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag enbot:latest
 
