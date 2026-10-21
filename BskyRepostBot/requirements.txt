@@ -2,6 +2,6 @@
 atproto
 pillow
 python-dotenv
-feedparser
+#feedparser
 requests
-flask
+#flask
