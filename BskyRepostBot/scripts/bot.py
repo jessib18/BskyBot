@@ -137,7 +137,7 @@ class Bot:
         for u in x_facets.get("urls", []):
             short_url = u.get("url")
             expanded = u.get("expanded_url")
-            if short_url and short_url in text:
+            if short_url and expanded and short_url in text:
                 text = text.replace(short_url, expanded)
 
         text = re.sub(r'\s+https://t\.co/\S+', '', text)
