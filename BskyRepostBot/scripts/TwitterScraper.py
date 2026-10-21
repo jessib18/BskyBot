@@ -116,6 +116,8 @@ class TwitterScraper:
             if t.get("id") == self.get_latest():
                 print("caught up!")
                 break
+            if tweet.get("retweeted_tweet"):
+                continue
             tweets_to_repost.append(t)
 
         if len(tweets_to_repost) > 0:
